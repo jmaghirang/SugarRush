@@ -5,16 +5,28 @@ using UnityEngine;
 public class Physics : MonoBehaviour
 {
     public MovingEntity notes;
-    public float tempo;
+    public float beatTempo;
+
+    public bool hasStarted;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        beatTempo = beatTempo / 60f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0, 0, tempo * Time.deltaTime);
+        if(!hasStarted)
+        {
+           /* if(Input.anyKeyDown)
+            {
+                hasStarted = true;
+            }*/
+        } else 
+        {
+            transform.position -= new Vector3(0, 0, beatTempo * Time.deltaTime);
+        }
     }
 }

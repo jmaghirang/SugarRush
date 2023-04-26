@@ -16,18 +16,20 @@ public class MovingEntity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
+        if(Input.GetKeyDown(keyToPress))
         {
-            if(canBePressed == true)
+            if(canBePressed)
             {
                 gameObject.SetActive(false);
+
+               GameManager.instance.NoteHit();
             }
-        }
+        } 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Press")
+        if (other.tag == "Press")
         {
             canBePressed = true;
         }
@@ -36,7 +38,9 @@ public class MovingEntity : MonoBehaviour
     {
         if (other.tag == "Press")
         {
-            canBePressed = false;
+                canBePressed = false;
+
+                GameManager.instance.NoteMissed();
         }
     }
 }

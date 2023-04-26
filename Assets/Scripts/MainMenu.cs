@@ -30,4 +30,10 @@ public class MainMenu : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.Escape))
             SceneManager.LoadScene (sceneIndex - sceneIndex);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log ("QUIT!");
+        Application.Quit();
+    }
 }

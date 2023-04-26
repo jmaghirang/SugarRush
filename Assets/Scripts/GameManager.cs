@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
+    public AudioSource missSound;
 
     public bool startPlaying;
 
@@ -92,10 +93,13 @@ public class GameManager : MonoBehaviour
         multiplierTracker = 0;
         missCounter--;
 
+        // Play miss sound effect
+        missSound.PlayOneShot(missSound.clip);
+
         if (missCounter == 0)
         {
             sceneIndex = 0;
-            SceneManager.LoadScene (sceneIndex - sceneIndex);
+            SceneManager.LoadScene("GameOver");
         }
 
         missText.text = "Life: " + missCounter;

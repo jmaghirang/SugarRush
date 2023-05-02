@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingEntity : MonoBehaviour
+public class Note : MonoBehaviour
 {
     public bool canBePressed;
     public KeyCode keyToPress;
@@ -10,7 +10,7 @@ public class MovingEntity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

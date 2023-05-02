@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public bool startPlaying;
 
-    public Physics theBS;
+    public NotePhysics theBS;
 
     public static GameManager instance;
 

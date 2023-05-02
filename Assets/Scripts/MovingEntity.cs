@@ -20,7 +20,7 @@ public class MovingEntity : MonoBehaviour
         {
             if(canBePressed)
             {
-                gameObject.SetActive(false);
+               gameObject.SetActive(false);
 
                GameManager.instance.NoteHit();
             }
@@ -38,9 +38,9 @@ public class MovingEntity : MonoBehaviour
     {
         if (other.tag == "Press")
         {
-                canBePressed = false;
+            canBePressed = false;
 
-                GameManager.instance.NoteMissed();
+            GameManager.instance.NoteMissed();
         }
     }
 }

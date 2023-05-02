@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-    private SpriteRenderer sr;
+    public Animator attackingAnimation;
     private AudioSource audioSource;
-    public Sprite ogImage;
-    public Sprite pressedImage;
     public AudioClip keyPressSound;
-
-    public KeyCode keyToPress;
 
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        attackingAnimation = GetComponent<Animator>();
+
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.clip = keyPressSound;
@@ -24,15 +21,16 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown("x"))
         {
-            sr.sprite = pressedImage;
+            attackingAnimation.Play("Attack01_SwordAndShiled");
             audioSource.Play();
         }
 
-        if (Input.GetKeyUp(keyToPress))
+        if (Input.GetKeyDown("z"))
         {
-            sr.sprite = ogImage;
+            attackingAnimation.Play("DefendHit_SwordAndShield");
+            audioSource.Play();
         }
     }
 }

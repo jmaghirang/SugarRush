@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         if(missCounter != 10){
         missCounter++;
-        missText.text = "HP: " + missCounter;
+        missText.text = "Life: " + missCounter;
         }
 
     }

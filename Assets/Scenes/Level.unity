@@ -25918,7 +25918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ogImage: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
   pressedImage: {fileID: 21300000, guid: 2d10ec486261df445b73774ff82f1b69, type: 3}
-  keyPressSound: {fileID: 8300000, guid: 103b5ed7deea26347a8e4641e38f0688, type: 3}
+  keyPressSound: {fileID: 8300000, guid: 5a3d94890b32641418b8006f26af5500, type: 3}
   keyToPress: 122
 --- !u!212 &1045691710
 SpriteRenderer:
@@ -27622,7 +27622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ogImage: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
   pressedImage: {fileID: 21300000, guid: cacc39dd2a4e88a43aadeddd73e9b1e2, type: 3}
-  keyPressSound: {fileID: 8300000, guid: 103b5ed7deea26347a8e4641e38f0688, type: 3}
+  keyPressSound: {fileID: 8300000, guid: 5a3d94890b32641418b8006f26af5500, type: 3}
   keyToPress: 120
 --- !u!212 &1114918895
 SpriteRenderer:
@@ -48475,7 +48475,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HP: 10'
+  m_Text: 'Life: 10'
 --- !u!222 &1967960020
 CanvasRenderer:
   m_ObjectHideFlags: 0

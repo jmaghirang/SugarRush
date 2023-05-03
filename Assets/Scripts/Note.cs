@@ -36,11 +36,14 @@ public class Note : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (gameObject.activeInHierarchy)
+        {
         if (other.tag == "Press")
         {
             canBePressed = false;
 
             GameManager.instance.NoteMissed();
+        }
         }
     }
 }

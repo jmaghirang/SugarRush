@@ -11,9 +11,12 @@ public class BulletPhysics : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
-        GameManager.instance.NoteMissed();
+      //  if(other.gameObject.tag == "bullet")
+      //  {
+            GameManager.instance.NoteMissed();
+            Destroy(gameObject);
+     //   }
     }
 }

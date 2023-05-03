@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public int currentMultiplier;
     public int multiplierTracker;
-    public int missCounter = 10;
+    public int missCounter = 50;
     int sceneIndex;
 
     public int[] multiplierThresholds;
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         scoreText.text = "Points: 0";
-        missText.text = "Life: 10";
+        missText.text = "Life: 50";
         currentMultiplier = 1;
         sceneIndex = SceneManager.GetActiveScene (). buildIndex;
     }
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "Points: " + currentScore;
 
-        if(missCounter != 10){
+        if(missCounter != 50){
         missCounter++;
         missText.text = "Life: " + missCounter;
         }

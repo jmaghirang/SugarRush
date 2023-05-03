@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAIBehavior : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public Transform player; // Reference to the player's Transform
     public GameObject bulletPrefab; // Reference to the bullet prefab

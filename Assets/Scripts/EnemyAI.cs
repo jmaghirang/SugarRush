@@ -31,7 +31,9 @@ public class EnemyAI : MonoBehaviour
         {
             nextFireTime = Time.time + 1 / fireRate;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().velocity = (player.position - transform.position).normalized * bulletSpeed;
+            //bullet.GetComponent<Rigidbody>().velocity = (player.position - transform.position).normalized * bulletSpeed;
+            Vector3 shootDirection = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z).normalized;
+            bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
         }
     }
 }

@@ -34,6 +34,7 @@ public class Controls : MonoBehaviour
         }
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(horizontalInput * Time.deltaTime * 5f, 0f, 0f);
-        }
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        transform.position += new Vector3(horizontalInput * Time.deltaTime * 5f, 0f, verticalInput * Time.deltaTime * 5f);
+    }
 }

@@ -4767,8 +4767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9.6663, y: -175}
-  m_SizeDelta: {x: 421.6525, y: 198.9918}
+  m_AnchoredPosition: {x: 9.7119, y: -181.5204}
+  m_SizeDelta: {x: 421.7437, y: 212.0327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553695936
 MonoBehaviour:
@@ -5720,7 +5720,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "There is an invasion of vegetables coming towards your kingdom!!!\n\nUse
-    the 'z' Key to hit the sweets \nUse 'x' to hit the vegetables"
+    The Arrow Keys to move\nUse 'z' Key to hit the sweets \nUse 'x' to hit the vegetables"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2dd44389d918b8c41afffa102568e119, type: 2}
   m_sharedMaterial: {fileID: -6849155703423757117, guid: 2dd44389d918b8c41afffa102568e119, type: 2}
@@ -5747,8 +5747,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

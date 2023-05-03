@@ -28,12 +28,17 @@ public class MainMenu : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyDown (KeyCode.Escape))
-            SceneManager.LoadScene (sceneIndex - sceneIndex);
+            SceneManager.LoadScene (sceneIndex + 2);
     }
 
     public void QuitGame()
     {
         Debug.Log ("QUIT!");
         Application.Quit();
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene (sceneIndex - sceneIndex);
     }
 }

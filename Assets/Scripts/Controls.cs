@@ -32,5 +32,8 @@ public class Controls : MonoBehaviour
             attackingAnimation.Play("DefendHit_SwordAndShield");
             audioSource.Play();
         }
-    }
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        transform.position += new Vector3(horizontalInput * Time.deltaTime * 5f, 0f, 0f);
+        }
 }

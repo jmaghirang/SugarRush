@@ -28,7 +28,13 @@ public class MainMenu : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyDown (KeyCode.Escape))
-            SceneManager.LoadScene (sceneIndex + 2);
+            SceneManager.LoadScene ("Win");
+    }
+
+    public void NextLevel()
+    {
+        Debug.Log ("NextLevel!");
+        SceneManager.LoadScene("Level2");
     }
 
     public void QuitGame()

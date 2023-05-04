@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-    public Animator attackingAnimation;
+    public Animator playerAnimation;
+
     private AudioSource audioSource;
     private AudioSource audioSource2;
     public AudioClip keyPressSound;
@@ -13,7 +15,7 @@ public class Controls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackingAnimation = GetComponent<Animator>();
+        playerAnimation = GetComponent<Animator>();
 
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
@@ -27,20 +29,62 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
         if (Input.GetKeyDown("x"))
         {
-            attackingAnimation.Play("Attack01_SwordAndShiled");
+            playerAnimation.Play("Attack01_SwordAndShiled");
             audioSource.Play();
         }
 
         if (Input.GetKeyDown("z"))
         {
-            attackingAnimation.Play("DefendHit_SwordAndShield");
+            playerAnimation.Play("DefendHit_SwordAndShield");
             audioSource2.Play();
         }
 
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (horizontalInput == -1f)
+        {
+            if (verticalInput == 1f)
+            {
+                playerAnimation.Play("MoveFWD_Battle_InPlace_SwordAndShield");
+            }
+            else if (verticalInput == -1f)
+            {
+                playerAnimation.Play("MoveBWD_Battle_InPlace_SwordAndShield");
+            }
+            else
+            {
+                playerAnimation.Play("MoveLFT_Battle_InPlace_SwordAndShield");
+            }
+
+        }
+        if (horizontalInput == 1f)
+        {
+            if (verticalInput == 1f)
+            {
+                playerAnimation.Play("MoveFWD_Battle_InPlace_SwordAndShield");
+            }
+            else if(verticalInput == -1f)
+            {
+                playerAnimation.Play("MoveBWD_Battle_InPlace_SwordAndShield");
+            }
+            else
+            {
+                playerAnimation.Play("MoveRGT_Battle_InPlace_SwordAndShield");
+            }
+        }
+
+        if (verticalInput == -1f)
+        {
+            playerAnimation.Play("MoveBWD_Battle_InPlace_SwordAndShield");
+        }
+        if (verticalInput == 1f)
+        {
+            playerAnimation.Play("MoveFWD_Battle_InPlace_SwordAndShield");
+        }
+
         transform.position += new Vector3(horizontalInput * Time.deltaTime * 8f, 0f, verticalInput * Time.deltaTime * 8f);
     }
 }

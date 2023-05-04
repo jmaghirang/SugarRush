@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9984,7 +9984,7 @@ PrefabInstance:
     - target: {fileID: 7413344840680693326, guid: cc91c8ba8b9a34f4d99e70d721f60b64, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c85c38205dd748545a2f47287cc783d8, type: 2}
+      objectReference: {fileID: 9100000, guid: cbfb743ced72e8048bd4030f2ae831b0, type: 2}
     - target: {fileID: 7647134206250791342, guid: cc91c8ba8b9a34f4d99e70d721f60b64, type: 3}
       propertyPath: m_Name
       value: FemaleCharacterPBR
@@ -17156,7 +17156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e07e68c2c3da9e4cae2f6743bd8ec08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackingAnimation: {fileID: 642129164}
+  playerAnimation: {fileID: 642129164}
   keyPressSound: {fileID: 8300000, guid: e4adfbf7d081dec4396ae973cca7ea16, type: 3}
   keyPressSound2: {fileID: 8300000, guid: 4415e1279380011419d83f84e2dd9bfe, type: 3}
 --- !u!135 &642129166

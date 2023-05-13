@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     public bool startPlaying;
 
-    public NotePhysics theBS;
+    public NotePhysics veggies;
+    public NotePhysics sweets;
 
     public static GameManager instance;
 
@@ -50,7 +51,8 @@ public class GameManager : MonoBehaviour
             if(Input.anyKeyDown)
             {
                 startPlaying = true;
-                theBS.hasStarted = true;
+                veggies.hasStarted = true;
+                sweets.hasStarted = true;
 
                 theMusic.Play();
             }

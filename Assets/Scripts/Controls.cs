@@ -29,9 +29,6 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
         if (Input.GetKeyDown("x"))
         {
             playerAnimation.Play("Attack01_SwordAndShiled");
@@ -43,6 +40,11 @@ public class Controls : MonoBehaviour
             playerAnimation.Play("DefendHit_SwordAndShield");
             audioSource2.Play();
         }
+
+        //Player Movement
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         if (horizontalInput == -1f)
         {

@@ -38,12 +38,12 @@ public class Note : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-        if (other.tag == "Press")
-        {
-            canBePressed = false;
+            if (other.tag == "Press")
+            {
+                canBePressed = false;
 
-            GameManager.instance.NoteMissed();
-        }
+                GameManager.instance.NoteMissed();
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ public class EntityMgr : MonoBehaviour
         float[] xPosition = { -7.15f, 0f, 7.4f };
         float zPosition = position.z;
 
-        for(int j = 0; j < numberOfVeggies; j++)
+        for(int i = 0; i < numberOfVeggies; i++)
         {
             int randomX = Random.Range(0, 3);
             int randomVeggie = Random.Range(0, vegetables.Count);

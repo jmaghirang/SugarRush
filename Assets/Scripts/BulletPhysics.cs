@@ -7,7 +7,7 @@ public class BulletPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Physics.IgnoreLayerCollision(0, 10, true);
     }
 
     // Update is called once per frame

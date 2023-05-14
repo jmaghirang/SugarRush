@@ -35,13 +35,19 @@ public class GameManager : MonoBehaviour
     public Text veggieText;
     public Text candyText;
 
+    public int veggiesToWin = 10;
+    public int sweetsToWin = 6;
+    public int scoreToWin = 6000;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
 
-        scoreText.text = "Points: 0";
+        scoreText.text = "0/" + scoreToWin.ToString();
         missText.text = "50";
+        veggieText.text = "0/" + veggiesToWin.ToString();
+        candyText.text = "0/" + sweetsToWin.ToString();
         currentMultiplier = 1;
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -81,13 +87,13 @@ public class GameManager : MonoBehaviour
         multiText.text = "Streak: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
-        scoreText.text = "Points: " + currentScore;
+        scoreText.text = currentScore.ToString() + "/" + scoreToWin.ToString();
       
         if (missCounter < 49){
         missCounter = missCounter + 2;
         }
 
-        if(currentScore >= 6000 && candyCounter >= 5 && veggieCounter >= 10)
+        if(currentScore >= scoreToWin && candyCounter >= sweetsToWin && veggieCounter >= veggiesToWin)
         {
             SceneManager.LoadScene("Win");
         }
@@ -105,20 +111,20 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("x"))
         {
             veggieCounter++;
-            veggieText.text = " " + veggieCounter;
+            veggieText.text = veggieCounter.ToString() + "/" + veggiesToWin.ToString();
         }
 
         if (Input.GetKeyDown("z"))
         {
             candyCounter++;
-            candyText.text = " " + candyCounter;
+            candyText.text = candyCounter.ToString() + "/" + sweetsToWin.ToString();
         }
 
     }
 
     public void NoteMissed()
     {
-        Debug.Log("Missed Note");
+        // Debug.Log("Missed Note");
 
         currentMultiplier = 1;
         multiplierTracker = 0;

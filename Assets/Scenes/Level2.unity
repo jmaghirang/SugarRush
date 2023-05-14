@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15611,7 +15611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200a557b748e3d346a9de961e9b2297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 0}
   beatTempo: 400
   hasStarted: 0
 --- !u!4 &625078117
@@ -22313,7 +22312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200a557b748e3d346a9de961e9b2297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 0}
   beatTempo: 310
   hasStarted: 0
 --- !u!1001 &855048761
@@ -29009,18 +29007,24 @@ MonoBehaviour:
   theMusic: {fileID: 1850491164}
   missSound: {fileID: 2033693195}
   startPlaying: 0
-  theBS: {fileID: 625078116}
+  veggies: {fileID: 0}
+  sweets: {fileID: 0}
   currentScore: 0
   scorePerNote: 100
-  scorePerGoodNote: 125
-  scorePerPerfectNote: 150
   currentMultiplier: 0
   multiplierTracker: 0
   missCounter: 50
+  veggieCounter: 0
+  candyCounter: 0
   multiplierThresholds: 010000000200000004000000
   scoreText: {fileID: 812732469}
   multiText: {fileID: 1018796993}
   missText: {fileID: 1864357663}
+  veggieText: {fileID: 0}
+  candyText: {fileID: 0}
+  veggiesToWin: 10
+  sweetsToWin: 6
+  scoreToWin: 6000
 --- !u!4 &1091767570
 Transform:
   m_ObjectHideFlags: 0

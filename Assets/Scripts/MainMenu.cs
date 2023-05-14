@@ -25,11 +25,11 @@ public class MainMenu : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene (). buildIndex;
     }
 
-    public void Update()
+    /*public void Update()
     {
         if (Input.GetKeyDown (KeyCode.Escape))
             SceneManager.LoadScene ("Win");
-    }
+    }*/
 
     public void NextLevel()
     {

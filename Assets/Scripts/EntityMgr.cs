@@ -11,8 +11,8 @@ public class EntityMgr : MonoBehaviour
         instance = this;
     }
 
-    public List<Note> vegetables;
-    public int numberOfVeggies;
+    public List<Food> noms;
+    public int totalNoms;
 
     public Vector3 position;
     public float offset;
@@ -24,13 +24,13 @@ public class EntityMgr : MonoBehaviour
         float[] xPosition = { -7.15f, 0f, 7.4f };
         float zPosition = position.z;
 
-        for(int i = 0; i < numberOfVeggies; i++)
+        for(int i = 0; i < totalNoms; i++)
         {
             int randomX = Random.Range(0, 3);
-            int randomVeggie = Random.Range(0, vegetables.Count);
+            int randomNom = Random.Range(0, noms.Count);
             position = new Vector3(xPosition[randomX], 0, zPosition);
 
-            var newVeggie = Instantiate(vegetables[randomVeggie], position, transform.rotation);
+            var newVeggie = Instantiate(noms[randomNom], position, transform.rotation);
             newVeggie.transform.parent = gameObject.transform;
 
             zPosition += offset;

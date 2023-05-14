@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotePhysics : MonoBehaviour
+public class FoodPhysics : MonoBehaviour
 {
-    public Note note;
     public float beatTempo;
 
     public bool hasStarted;

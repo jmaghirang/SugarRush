@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
     public bool startPlaying;
 
-    public NotePhysics veggies;
-    public NotePhysics sweets;
+    public FoodPhysics veggies;
+    public FoodPhysics sweets;
 
     public static GameManager instance;
 

@@ -29,11 +29,14 @@ public class Bullet : MonoBehaviour
     }
     public void ShootBullet()
     {
-        // Create a new bullet instance
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        if (GameManager.instance.veggies.hasStarted)
+        {
+            // Create a new bullet instance
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
-        // Set the bullet's velocity towards the player
-        Vector3 shootDirection = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z).normalized;
-        bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
+            // Set the bullet's velocity towards the player
+            Vector3 shootDirection = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z).normalized;
+            bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
+        }
     }
 }

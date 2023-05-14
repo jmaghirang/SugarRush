@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // Variable to keep track of the playback position of the audio clip
+    private float audioClipPosition = 0f;
     public AudioSource theMusic;
     public AudioSource missSound;
 
@@ -39,6 +41,9 @@ public class GameManager : MonoBehaviour
     public int sweetsToWin = 6;
     public int scoreToWin = 6000;
 
+    public GameObject pauseMenuPanel;
+    private bool isPaused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +71,48 @@ public class GameManager : MonoBehaviour
                 theMusic.Play();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+
+        // code that didn't work
+        /*if (veggies.foodCount == 0 && sweets.foodCount == 0)
+        {
+            if (currentScore < scoreToWin || veggieCounter < veggiesToWin || candyCounter < sweetsToWin)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                SceneManager.LoadScene("Win");
+            }
+        }*/
+
+        // also didn't work
+        /*
+        // Check if there are no more entities in the scene
+        if (veggies.GetActiveEntities().Count == 0 && sweets.GetActiveEntities().Count == 0)
+        {
+            // Check if the player met the winning conditions
+            if (currentScore >= scoreToWin && candyCounter >= sweetsToWin && veggieCounter >= veggiesToWin)
+            {
+                SceneManager.LoadScene("Win");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+        */
 
     }
 
@@ -144,4 +191,52 @@ public class GameManager : MonoBehaviour
 
         multiText.text = "Streak: x" + currentMultiplier;
     }
+
+        public void TogglePause()
+    {
+        if (isPaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+        pauseMenuPanel.SetActive(true);
+
+        audioClipPosition = theMusic.time;
+        theMusic.Pause();
+    }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+        pauseMenuPanel.SetActive(false);
+
+        theMusic.time = audioClipPosition;
+        theMusic.Play();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

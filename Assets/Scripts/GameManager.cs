@@ -18,12 +18,13 @@ public class GameManager : MonoBehaviour
 
     public int currentScore;
     public int scorePerNote = 100;
-    public int scorePerGoodNote = 125;
-    public int scorePerPerfectNote = 150;
 
     public int currentMultiplier;
     public int multiplierTracker;
     public int missCounter = 50;
+    public int veggieCounter = 0;
+    public int candyCounter = 0;
+
     int sceneIndex;
 
     public int[] multiplierThresholds;
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Text multiText;
     public Text missText;
+    public Text veggieText;
+    public Text candyText;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +82,15 @@ public class GameManager : MonoBehaviour
 
         currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "Points: " + currentScore;
+      
+        if (missCounter < 49){
+        missCounter = missCounter + 2;
+        }
+
+        if(currentScore >= 6000 && candyCounter >= 5 && veggieCounter >= 10)
+        {
+            SceneManager.LoadScene("Win");
+        }
 
         if (missCounter != 0)
         {
@@ -88,6 +100,18 @@ public class GameManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene("GameOver");
+        }
+
+        if (Input.GetKeyDown("x"))
+        {
+            veggieCounter++;
+            veggieText.text = " " + veggieCounter;
+        }
+
+        if (Input.GetKeyDown("z"))
+        {
+            candyCounter++;
+            candyText.text = " " + candyCounter;
         }
 
     }

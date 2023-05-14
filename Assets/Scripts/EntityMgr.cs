@@ -35,6 +35,7 @@ public class EntityMgr : MonoBehaviour
 
             zPosition += offset;
         }
+        
     }
 
     // Update is called once per frame

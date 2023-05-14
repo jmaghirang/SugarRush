@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
         multiText.text = "Streak: x" + currentMultiplier;
     }
 
-        public void TogglePause()
+    public void TogglePause()
     {
         if (isPaused)
         {

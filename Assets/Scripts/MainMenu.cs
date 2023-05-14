@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene (sceneIndex+1);*/
 
         audioSource.Play();
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void Start()
@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
     public void NextLevel()
     {
         Debug.Log ("NextLevel!");
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level 2");
     }
 
     public void QuitGame()

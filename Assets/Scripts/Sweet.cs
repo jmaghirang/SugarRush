@@ -20,6 +20,11 @@ public class Sweet : Food
                 gameObject.SetActive(false);
 
                 GameManager.instance.NoteHit();
+                if (GameManager.instance.missCounter < 49)
+                {
+                    GameManager.instance.missCounter += 2;
+                    GameManager.instance.missText.text = GameManager.instance.missCounter.ToString();
+                }
             }
         }
     }

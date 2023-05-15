@@ -114,9 +114,10 @@ public class GameManager : MonoBehaviour
         currentScore += scorePerNote * currentMultiplier;
         scoreText.text = currentScore.ToString() + "/" + scoreToWin.ToString();
       
-        if (missCounter < 49){
-            missCounter = missCounter + 2;
-        }
+        /*if (missCounter < 49){
+            missCounter += 2;
+            missText.text = missCounter.ToString();
+        }*/
 
         // win panel hereee
         if(currentScore >= scoreToWin && candyCounter >= sweetsToWin && veggieCounter >= veggiesToWin)

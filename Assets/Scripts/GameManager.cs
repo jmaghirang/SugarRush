@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = currentScore.ToString() + "/" + scoreToWin.ToString();
       
         if (missCounter < 49){
-        missCounter = missCounter + 2;
+            missCounter = missCounter + 2;
         }
 
         // win panel hereee
@@ -129,10 +129,10 @@ public class GameManager : MonoBehaviour
             // win panel instead of a win scene!
             winPanel.SetActive(true);
             // pauses the game basically
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
 
-        if (missCounter != 0)
+        /*if (missCounter != 0)
         {
             missCounter--;
             missText.text = missCounter.ToString();
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
             loseFX.Play();
             gameOverPanel.SetActive(true);
             Time.timeScale = 0;
-        }
+        }*/
 
         if (Input.GetKeyDown("x"))
         {
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         multiplierTracker = 0;
 
-        if (missCounter > 0)
+        /*if (missCounter > 0)
         {
             missCounter--;
             missText.text = missCounter.ToString();
@@ -178,6 +178,20 @@ public class GameManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene("GameOver");
+        }*/
+
+        if (missCounter != 0)
+        {
+            missCounter--;
+            missText.text = missCounter.ToString();
+        }
+        else
+        {
+            // i think the code is same here except its for the game over panel
+            theMusic.Stop();
+            loseFX.Play();
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         multiText.text = "Streak: x" + currentMultiplier;

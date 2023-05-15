@@ -31,6 +31,24 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene ("Win");
     }*/
 
+    public void SelectOne()
+    {
+        Debug.Log ("Level One");
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void SelectTwo()
+    {
+        Debug.Log ("Level Two");
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void SelectThree()
+    {
+        Debug.Log ("Level Three");
+        SceneManager.LoadScene("Level 3");
+    }
+
     public void NextLevel()
     {
         Debug.Log ("NextLevel!");

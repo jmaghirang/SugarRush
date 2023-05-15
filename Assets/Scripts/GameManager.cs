@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Variable to keep track of the playback position of the audio clip
+    // variable to keep track of the playback position of the audio clip
     private float audioClipPosition = 0f;
     public AudioSource theMusic;
-    public AudioSource missSound;
+
+    // i am so sorry there are so many audio variable
+    public AudioSource winMusic;
+    public AudioSource winFX;
+    public AudioSource loseFX;
+    //public AudioSource missSound;
 
     public bool startPlaying;
 
@@ -42,6 +47,9 @@ public class GameManager : MonoBehaviour
     public int scoreToWin = 6000;
 
     public GameObject pauseMenuPanel;
+    // im so dumb i couldnt figure out how to make the win panel work for every game level i am sorry this is here now! we have so many UI panels ;-;
+    public GameObject winPanel;
+    public GameObject gameOverPanel;
     private bool isPaused = false;
 
     // Start is called before the first frame update
@@ -84,36 +92,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // code that didn't work
-        /*if (veggies.foodCount == 0 && sweets.foodCount == 0)
-        {
-            if (currentScore < scoreToWin || veggieCounter < veggiesToWin || candyCounter < sweetsToWin)
-            {
-                SceneManager.LoadScene("GameOver");
-            }
-            else
-            {
-                SceneManager.LoadScene("Win");
-            }
-        }*/
-
-        // also didn't work
-        /*
-        // Check if there are no more entities in the scene
-        if (veggies.GetActiveEntities().Count == 0 && sweets.GetActiveEntities().Count == 0)
-        {
-            // Check if the player met the winning conditions
-            if (currentScore >= scoreToWin && candyCounter >= sweetsToWin && veggieCounter >= veggiesToWin)
-            {
-                SceneManager.LoadScene("Win");
-            }
-            else
-            {
-                SceneManager.LoadScene("GameOver");
-            }
-        }
-        */
-
     }
 
     public void NoteHit()
@@ -140,9 +118,18 @@ public class GameManager : MonoBehaviour
         missCounter = missCounter + 2;
         }
 
+        // win panel hereee
         if(currentScore >= scoreToWin && candyCounter >= sweetsToWin && veggieCounter >= veggiesToWin)
         {
-            SceneManager.LoadScene("Win");
+            // BG music stops
+            theMusic.Stop();
+            // win music plays 
+            winMusic.Play();
+            winFX.Play();
+            // win panel instead of a win scene!
+            winPanel.SetActive(true);
+            // pauses the game basically
+            Time.timeScale = 0;
         }
 
         if (missCounter != 0)
@@ -152,7 +139,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("GameOver");
+            // i think the code is same here except its for the game over panel
+            theMusic.Stop();
+            loseFX.Play();
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (Input.GetKeyDown("x"))
@@ -182,7 +173,7 @@ public class GameManager : MonoBehaviour
             missText.text = missCounter.ToString();
 
             // Play miss sound effect
-            missSound.PlayOneShot(missSound.clip);
+            //missSound.PlayOneShot(missSound.clip);
         }
         else
         {

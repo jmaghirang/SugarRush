@@ -7,17 +7,14 @@ using UnityEngine.AI;
 public class ShootingVegetable : MonoBehaviour
 {
     private Animator animator;
-
-    //public bool playerInRange;
-    //public float sightRange;
-
-    //public LayerMask player;
+    private ShootingVegetable veg;
 
     public bool startShooting;
 
     // Start is called before the first frame update
     void Start()
     {
+        veg = GetComponent<ShootingVegetable>();
         animator = GetComponent<Animator>();
         startShooting = false;
     }
@@ -27,15 +24,14 @@ public class ShootingVegetable : MonoBehaviour
     {
         if (GameManager.instance.veggies.hasStarted)
         {
+            animator.SetBool("gameStart", true);
+        }
+
+        if (veg.GetComponent<Waypoint>().wayPointReached)
+        {
+            animator.SetBool("gameStart", false);
             animator.SetBool("startShoot", true);
             startShooting = true;
         }
-
-        /*playerInRange = Physics.CheckSphere(transform.position, sightRange, player);
-        if (playerInRange)
-        {
-            animator.SetBool("gameStart", false);
-            Shoot();
-        }*/
     }
 }

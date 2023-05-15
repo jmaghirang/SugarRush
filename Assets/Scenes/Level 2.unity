@@ -5776,7 +5776,7 @@ MonoBehaviour:
   player: {fileID: 1208810366}
   bulletPrefab: {fileID: 1243783204241154957, guid: dbc5a9737240f0c459a66aeb26b94727, type: 3}
   bulletSpeed: 10
-  shootInterval: 4
+  shootInterval: 3
   veggie: {fileID: 1593756837}
 --- !u!1001 &173237447
 PrefabInstance:
@@ -32448,9 +32448,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1593756834}
+  - {fileID: 1706939802}
   - {fileID: 1290655324}
+  - {fileID: 1279665677}
   - {fileID: 1816458682}
+  - {fileID: 1209425648}
   - {fileID: 1942298292}
+  - {fileID: 2134128173}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38721,6 +38725,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1209425647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209425648}
+  m_Layer: 0
+  m_Name: PurpleSideWP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209425648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209425647}
+  m_LocalRotation: {x: -0, y: 0.31264314, z: -0, w: 0.9498707}
+  m_LocalPosition: {x: 12.09, y: 0, z: 5.1400003}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1016330054}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1209687546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40726,6 +40761,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe6b35a82f09a4841ac5fff5dea09470, type: 3}
   m_PrefabInstance: {fileID: 1279127136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1279665676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279665677}
+  m_Layer: 6
+  m_Name: OrangeWP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279665677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279665676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4400008, y: 0, z: 9.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1016330054}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1281096582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40955,7 +41021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.14
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41031,6 +41097,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startShooting: 0
+--- !u!114 &1290655328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290655326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57aae8172c394924b9fdc3a6bab47984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 1279665677}
+  movementSpeed: 5
+  wayPointReached: 0
 --- !u!1001 &1294195338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47646,7 +47727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200a557b748e3d346a9de961e9b2297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTempo: 400
+  beatTempo: 450
   hasStarted: 0
 --- !u!114 &1488519620
 MonoBehaviour:
@@ -50418,7 +50499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.14
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50494,6 +50575,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startShooting: 0
+--- !u!114 &1593756838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593756836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57aae8172c394924b9fdc3a6bab47984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 1706939802}
+  movementSpeed: 5
+  wayPointReached: 0
 --- !u!1001 &1597062999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53165,6 +53261,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe6b35a82f09a4841ac5fff5dea09470, type: 3}
   m_PrefabInstance: {fileID: 1704104251}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1706939801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706939802}
+  m_Layer: 6
+  m_Name: PurpleWP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706939802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706939801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.16, y: 0, z: 9.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1016330054}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710342066
 GameObject:
   m_ObjectHideFlags: 0
@@ -56593,7 +56720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.09
+      value: 152.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -56601,7 +56728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.1400003
+      value: 195.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ea3a28fe89cb9c43b646c85184a4fd1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56677,6 +56804,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startShooting: 0
+--- !u!114 &1816458686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816458684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57aae8172c394924b9fdc3a6bab47984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 1209425648}
+  movementSpeed: 5
+  wayPointReached: 0
 --- !u!1 &1816712458
 GameObject:
   m_ObjectHideFlags: 0
@@ -59026,7 +59168,7 @@ MonoBehaviour:
   veggieText: {fileID: 1535313982}
   candyText: {fileID: 1102525803}
   veggiesToWin: 18
-  sweetsToWin: 15
+  sweetsToWin: 10
   scoreToWin: 8000
   pauseMenuPanel: {fileID: 1515817262}
   winPanel: {fileID: 718836900}
@@ -60406,7 +60548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200a557b748e3d346a9de961e9b2297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTempo: 400
+  beatTempo: 450
   hasStarted: 0
 --- !u!114 &1921278690
 MonoBehaviour:
@@ -61237,7 +61379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.09
+      value: -152.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61245,7 +61387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.1400003
+      value: 195.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aac6d70c24f38c42a03ed678362708f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61321,6 +61463,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startShooting: 0
+--- !u!114 &1942298296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942298294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57aae8172c394924b9fdc3a6bab47984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 2134128173}
+  movementSpeed: 5
+  wayPointReached: 0
 --- !u!1001 &1950644218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64897,7 +65054,7 @@ MonoBehaviour:
   player: {fileID: 1208810366}
   bulletPrefab: {fileID: 1243783204241154957, guid: dbc5a9737240f0c459a66aeb26b94727, type: 3}
   bulletSpeed: 10
-  shootInterval: 4
+  shootInterval: 3
   veggie: {fileID: 1290655327}
 --- !u!1001 &2126346374
 PrefabInstance:
@@ -64991,6 +65148,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe6b35a82f09a4841ac5fff5dea09470, type: 3}
   m_PrefabInstance: {fileID: 2126346374}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2134128172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134128173}
+  m_Layer: 0
+  m_Name: OrangeSideWP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2134128173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134128172}
+  m_LocalRotation: {x: -0, y: -0.31264156, z: -0, w: 0.9498712}
+  m_LocalPosition: {x: -12.09, y: 0, z: 5.1400003}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1016330054}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2136813822
 PrefabInstance:
   m_ObjectHideFlags: 0

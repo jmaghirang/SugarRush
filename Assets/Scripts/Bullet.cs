@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
 {
     public Transform player; // Reference to the player's Transform
     public GameObject bulletPrefab; // Reference to the bullet prefab
-    //public Vector3 bulletSize;
     public float bulletSpeed = 1f; // The speed at which the bullet moves
     public float shootInterval = 2f; // The interval between each bullet shot
     private float timeSinceLastShot = 0f; // The time elapsed since the last bullet shot
@@ -17,7 +16,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //bulletPrefab.gameObject.transform.localScale += bulletSize;
+        
     }
 
     // Update is called once per frame

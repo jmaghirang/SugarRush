@@ -49,11 +49,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
-    public void NextLevel()
+    /*public void NextLevel()
     {
         Debug.Log ("NextLevel!");
         SceneManager.LoadScene("Level 2");
-    }
+    }*/
 
     public void QuitGame()
     {

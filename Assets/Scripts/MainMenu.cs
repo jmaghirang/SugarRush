@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
         audioSource.Play();
         SceneManager.LoadScene("Level 1");
+        setTimeScaleNormal();
     }
 
     public void Start()
@@ -35,18 +36,21 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log ("Level One");
         SceneManager.LoadScene("Level 1");
+        setTimeScaleNormal();
     }
 
     public void SelectTwo()
     {
         Debug.Log ("Level Two");
         SceneManager.LoadScene("Level 2");
+        setTimeScaleNormal();
     }
 
     public void SelectThree()
     {
         Debug.Log ("Level Three");
         SceneManager.LoadScene("Level 3");
+        setTimeScaleNormal();
     }
 
     /*public void NextLevel()
@@ -64,5 +68,11 @@ public class MainMenu : MonoBehaviour
     public void BackToMain()
     {
         SceneManager.LoadScene (sceneIndex - sceneIndex);
+        setTimeScaleNormal();
+    }
+
+    private void setTimeScaleNormal()
+    {
+        Time.timeScale = 1f;
     }
 }

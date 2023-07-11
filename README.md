@@ -1,7 +1,7 @@
 # Sugar Rush by Gumdrop Games
 
-CS 381 Spring 2023
-Final Project
+Game Engine Architecture (CS 381) Final Project
+
+Spring 2023
 
 Team Members: Randall Fernandez, Jamie Lee, Julianne Maghirang
-
